@@ -1,11 +1,11 @@
-# Loja_meta
+# SharinganApi
 > Api para visitar o site [Quotes to Scrape](http://quotes.toscrape.com/).
 
 
 Esta Api faz um crawler no site e pega as "Quotes" da página principal e salva no banco de dados
 
 
-## Installation
+## Instalação
 
 Windows & Linux:
 
@@ -15,7 +15,7 @@ git clone ou faça o download do Projeto
 
 ## Development setup
 
-Ao baixar, crie um usuário no ```rails c``` .
+Ao baixar e rodar ``bundle install``, crie um usuário no ```rails c``` .
 Para poder acessar a api, e fazer o crawler, vc deve estar autenticado.
 Quando criado, o usuário ele receberá um token necessário pra utilizar a API.
 Recomendo a utilização de alguma ferramenta para testar a api, eu usei o [Postman](https://www.getpostman.com/).
@@ -28,17 +28,13 @@ na citação(texto que fica entre aspas no site em cada quote).
 ## Possíveis erros.
 * Lembre-se de colocar o host do banco ,o default é : ``localhost:27017``
 
-```sh
-bundle install
-rails s
-```
 
-## Used Technologies
+## Tecnologias usadas
 
 * Usei Rails como framework web.
 * [MongoDb](https://www.mongodb.com/)
 * No back end Ruby
-* Usei algumas gems, todos elas tem link no gem file, entre elas, devise para autenticação
+* Usei algumas gems, todos elas tem link no ``Gemfile``, entre elas, devise para autenticação
 
 
 ## Meta
