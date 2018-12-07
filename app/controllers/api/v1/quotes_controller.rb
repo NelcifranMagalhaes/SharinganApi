@@ -17,6 +17,10 @@ end
 
 def quotes
 	searched_tag = spider(params[:search_tag])
+	searched_tag.each do |quote|
+		q = Quote.new(citation: quote[:quote],author: quote[:author],author_about: quote[:author_about], tags: quote[:tags],user: current_user)
+		q.save!
+	end
 	render json: searched_tag
 end
 # POST /api/v1/quotes
@@ -45,15 +49,6 @@ private
 		return list_quotes_json
 	end
 
-	# Use callbacks to share common setup or constraints between actions.
-
-	# def set_quote
-
-	# 	@quote = Quote.find(params[:id])
-
-	# end
-
-	# Only allow a trusted parameter "white list" through.
 
 	def quote_params
 
