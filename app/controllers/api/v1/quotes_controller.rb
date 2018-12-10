@@ -18,8 +18,12 @@ end
 def quotes
 	searched_tag = spider(params[:search_tag])
 	searched_tag.each do |quote|
-		q = Quote.new(citation: quote[:quote],author: quote[:author],author_about: quote[:author_about], tags: quote[:tags],user: current_user)
-		q.save!
+		@q = Quote.new(citation: quote[:quote],author: quote[:author],author_about: quote[:author_about], tags: quote[:tags],user: current_user)
+		if Quote.where(citation: @q.citation).exists?	
+			puts "########já tem no banco##########"
+		else
+			@q.save!
+		end
 	end
 	render json: searched_tag
 end
